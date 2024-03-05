@@ -6,8 +6,13 @@ CFLAGS = -O2 -G0 -Wall
 CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
 ASFLAGS = $(CFLAGS)
 
+ifneq ($(LUAV),)
+PSPDIR = $(shell psp-config --psp-prefix)
+INCDIR += $(PSPDIR)/include/lua$(LUAV)
+endif
+
 LIBDIR =
-LIBS = -llua -lm
+LIBS = -llua$(LUAV) -lm
 LDFLAGS =
 
 EXTRA_TARGETS = EBOOT.PBP
