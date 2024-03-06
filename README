@@ -1,2 +1,6 @@
 Compile the EBOOT.PBP with "make EBOOT.PBP" and copy
 "script.lua" into the same directory on memory stick.
+
+Lua version can be selected by setting the LUAV variable.
+For example, to build with Lua 5.1, run "make LUAV=51".
+Default is Lua 5.2, to build with it, just run "make".
