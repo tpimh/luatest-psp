@@ -78,7 +78,7 @@ int name(lua_State *L) \
 	if (argc != 1) return luaL_error(L, "wrong number of arguments"); \
 \
 	/* get first argument as int */ \
-	int argument = luaL_checkint(L, 1); \
+	lua_Integer argument = luaL_checkinteger(L, 1); \
 \
 	/* push result */ \
 	lua_pushboolean(L, (argument & bit) == bit); \
